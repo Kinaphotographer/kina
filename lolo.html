@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking Registration with Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            display: block;
+            margin: 8px 0;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"], input[type="radio"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Car Booking Registration with Payment</h2>
+
+        <form id="bookingForm">
+            <label for="customerName">Your Name</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="carModel">Car Model</label>
+            <input type="text" id="carModel" name="carModel" required>
+
+            <label for="bookingDate">Booking Date</label>
+            <input type="date" id="bookingDate" name="bookingDate" required>
+
+            <label for="rentalDuration">Rental Duration (in days)</label>
+            <input type="number" id="rentalDuration" name="rentalDuration" required>
+
+            <label for="paymentMethod">Payment Method</label>
+            <input type="radio" id="creditCard" name="paymentMethod" value="Credit Card" required>
+            <label for="creditCard">Credit Card</label>
+            <input type="radio" id="paypal" name="paymentMethod" value="PayPal">
+            <label for="paypal">PayPal</label>
+            <input type="radio" id="cash" name="paymentMethod" value="Cash">
+            <label for="cash">Cash</label>
+
+            <div id="creditCardInfo" style="display:none;">
+                <label for="creditCardNumber">Credit Card Number</label>
+                <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+
+                <label for="expiryDate">Expiry Date</label>
+                <input type="date" id="expiryDate" name="expiryDate">
+            </div>
+
+            <input type="submit" value="Book Car">
+        </form>
+
+        <div class="output" id="output" style="display: none;">
+            <h3>Booking Details</h3>
+            <p><strong>Customer Name:</strong> <span id="outName"></span></p>
+            <p><strong>Car Model:</strong> <span id="outCarModel"></span></p>
+            <p><strong>Booking Date:</strong> <span id="outBookingDate"></span></p>
+            <p><strong>Rental Duration:</strong> <span id="outRentalDuration"></span> days</p>
+            <p><strong>Payment Method:</strong> <span id="outPaymentMethod"></span></p>
+            <p id="creditCardDetails" style="display: none;"><strong>Credit Card Number:</strong> <span id="outCardNumber"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form values
+            var customerName = document.getElementById("customerName").value;
+            var carModel = document.getElementById("carModel").value;
+            var bookingDate = document.getElementById("bookingDate").value;
+            var rentalDuration = document.getElementById("rentalDuration").value;
+            var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            var creditCardNumber = document.getElementById("creditCardNumber").value;
+
+            // Display booking details
+            document.getElementById("outName").innerText = customerName;
+            document.getElementById("outCarModel").innerText = carModel;
+            document.getElementById("outBookingDate").innerText = bookingDate;
+            document.getElementById("outRentalDuration").innerText = rentalDuration;
+            document.getElementById("outPaymentMethod").innerText = paymentMethod;
+
+            if (paymentMethod === "Credit Card") {
+                document.getElementById("outCardNumber").innerText = creditCardNumber;
+                document.getElementById("creditCardDetails").style.display = "block";
+            }
+
+            // Show the output section
+            document.getElementById("output").style.display = "block";
+        });
+
+        // Toggle Credit Card Info visibility based on payment method selection
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(function (radio) {
+            radio.addEventListener("change", function () {
+                var creditCardInfo = document.getElementById("creditCardInfo");
+                if (this.value === "Credit Card") {
+                    creditCardInfo.style.display = "block";
+                } else {
+                    creditCardInfo.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="steps">
+            <div class="step">Step 1 <br> Confirm Items</div>
+            <div class="step">Step 2 <br> Enter Address</div>
+            <div class="step">Step 3 <br> Choose Shipping</div>
+            <div class="step">Step 4 <br> Confirm Total</div>
+            <div class="step active">Step 5 <br> Submit Payment</div>
+        </div>
+        <div class="payment-methods">
+            <p>Choose a payment method and click Continue...</p>
+            <img src="visa.png" alt="Visa">
+            <img src="mastercard.png" alt="MasterCard">
+            <img src="amex.png" alt="American Express">
+            <img src="discover.png" alt="Discover">
+            <img src="check.png" alt="Check">
+        </div>
+        <div class="credit-card-form">
+            <h2>Credit Card</h2>
+            <form id="paymentForm">
+                <label for="name">Name on card:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="text" id="expirationDate" name="expirationDate" required>
+                <label for="securityCode">Security Code:</label>
+                <input type="text" id="securityCode" name="securityCode" required>
+                <button type="submit">Continue...</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
