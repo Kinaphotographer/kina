@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>SELL YOUR CAR AT A BEST PRICE</h1>
+            <h2>MOST-RELIABLE <span>PRICE</span></h2>
+            <button class="btn">PREDICT PRICE</button>
+        </div>
+    </header>
+
+    <section class="form-section">
+        <h3>PREDICT YOUR CAR PRICE</h3>
+        <form id="carForm">
+            <div class="form-group">
+                <select id="model" required>
+                    <option value="" disabled selected>Select Car Model</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="BMW">BMW</option>
+                </select>
+                <select id="brand" required>
+                    <option value="" disabled selected>Select Brand</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="BMW">BMW</option>
+                </select>
+                <input type="number" id="year" placeholder="Model Year" required>
+            </div>
+            <div class="form-group">
+                <select id="bodyType" required>
+                    <option value="" disabled selected>Body Type</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                </select>
+                <select id="transmission" required>
+                    <option value="" disabled selected>Select Transmission</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                </select>
+                <select id="fuelType" required>
+                    <option value="" disabled selected>Fuel Type</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" id="engineCapacity" placeholder="Enter Engine Capacity" required>
+                <input type="number" id="mileage" placeholder="Enter Mileage" required>
+            </div>
+            <button type="submit" class="btn"><a href="payment.html">PREDICT PRICE</a></button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="info">
+            <p>🌎 World's #1 <br><span>Largest Auto portal</span></p>
+            <p>🚗 Car Sold <br><span>With Best Price</span></p>
+            <p>✅ Accuracy <br><span>100%</span></p>
+            <p>💰 Sell Car <br><span>At a best price</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: url('https://source.unsplash.com/1600x900/?modern,building') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 25px;
+            background: #f1f1f1;
+            text-indent: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background: #0056d2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #003c9d;
+        }
+        .links {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Warner & Spencer</div>
+        <input type="text" class="input-field" placeholder="Username">
+        <input type="password" class="input-field" placeholder="Password">
+        <button class="btn">Get Started</button>
+        <div class="links">
+            <a href="#">Create Account</a>
+            <a href="#">Need Help?</a>
+        </div>
+    </div>
+</body>
+</html>
